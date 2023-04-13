@@ -4,8 +4,7 @@
  * Number Of Residents and Number Of Neighborhoods
  * @author Itay getahun
  * id 315573667
- * @version 09/04/23
- *
+ * @version 13/04/23
  */
 public class City {
     private String _cityName;
@@ -143,7 +142,7 @@ public class City {
     }
 
     /**
-     * @return a string contains the city's details
+     * @return a string representation contains the city's details
      */
     public String toString() {
         return "City Name: " + getCityName() + "\n" +
