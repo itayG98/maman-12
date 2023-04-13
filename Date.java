@@ -13,12 +13,13 @@ public class Date {
     private int _year;
 
     // Month values
-    private final int JAN = 1, FEB = 2, MAR = 3, APR = 4, MAY = 5, JUN = 6, JUL = 7, AUG = 8, SEP = 9, OCT = 10, NOV = 11, DEC = 12;
-    private final int MIN_VALID_DAY = 1, MIN_VALID_MONTH = 1, MIN_VALID_YEAR = 1000, MAX_YEAR = 9999;
-    private final int DAY31 = 31, DAY30 = 30, DAY28 = 28;
+    private static final int JAN = 1, FEB = 2, MAR = 3, APR = 4, MAY = 5, JUN = 6, JUL = 7, AUG = 8, SEP = 9, OCT = 10, NOV = 11, DEC = 12;
+    private static final int DAY31 = 31, DAY30 = 30, DAY28 = 28;
+    private static final int MIN_VALID_DAY = 1, MIN_VALID_MONTH = 1, MIN_VALID_YEAR = 1000, MAX_YEAR = 9999;
     //Deafult values
-    private final int DEFAULT_DAY = 1, DEFAULT_MONTH = 1, DEFAULT_YEAR = 2000;
-    private final int TWO_DIGIT_NUM = 10;
+    private static final int DEFAULT_DAY = 1, DEFAULT_MONTH = 1, DEFAULT_YEAR = 2000;
+    // printing helper constant
+    private static final int TWO_DIGIT_NUM = 10;
 
 
     /**

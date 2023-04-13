@@ -9,7 +9,7 @@ public class Point {
 
     private int _x;
     private int _y;
-    private final int MINIMUM_VALID = 0;
+    private static final int MINIMUM_VALID = 0;
 
     /**
      * gets the x coordinate
@@ -48,7 +48,6 @@ public class Point {
 
     /**
      * creates a new Point object
-     *
      * @param x the x coordinate initialize with default value if not valid
      * @param y the y coordinate initialize with default value if not valid
      */

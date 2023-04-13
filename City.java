@@ -12,9 +12,10 @@ public class City {
     private Point _cityCenter, _centralStation;
     private long _numOfResidents;
     private int _numOfNeighborhoods;
-    private final int MINIMUM_RESIDENTS = 0, MINIMUM_NEIGHBORHOODS = 1;
+    private static final int MINIMUM_RESIDENTS = 0, MINIMUM_NEIGHBORHOODS = 1;
 
     /**
+     *
      * constructor creates a City object
      * @param cityName          city's name
      * @param dayEstablished    day in month the city established at
