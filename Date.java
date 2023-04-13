@@ -33,7 +33,6 @@ public class Date {
 
     /**
      * gets the month
-     *
      * @return the month represented by int
      */
     public int getMonth() {
@@ -42,7 +41,6 @@ public class Date {
 
     /**
      * gets the year
-     *
      * @return the year represented by int
      */
     public int getYear() {
@@ -79,7 +77,6 @@ public class Date {
     /**
      * creates a new Date object
      * If the date is not valid set its values to 01/01/2000
-     *
      * @param day   the day represented by int
      * @param month the month represented by int
      * @param year  the year represented by int
@@ -98,7 +95,6 @@ public class Date {
 
     /**
      * copy constructor creates a new Date object from existing one's values
-     *
      * @param other the date which you want to copy from
      */
     public Date(Date other) {
@@ -135,7 +131,7 @@ public class Date {
     private int calculateDate(int day, int month, int year) {
         if (month < 3) {
             year--;
-            month = month + 12;
+            month += 12;
         }
         return 365 * year + year / 4 - year / 100 + year / 400 + ((month + 1) * 306) / 10 + (day - 62);
     }
@@ -197,9 +193,9 @@ public class Date {
             return new Date(getDay() + 1, getMonth(), getYear());
         else {
             if (_month == 12)
-                return new Date(01, 01, getYear() + 1); // if the date is the last one in the year return the first in the new year
+                return new Date(MIN_VALID_DAY, MIN_VALID_MONTH, getYear() + 1); // if the date is the last one in the year return the first in the new year
             else
-                return new Date(1, getMonth() + 1, getYear()); // else return the first in the next month
+                return new Date(MIN_VALID_DAY, getMonth() + 1, getYear()); // else return the first in the next month
         }
     }
 }

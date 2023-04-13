@@ -1,5 +1,6 @@
 /**
- * The City class represent a city with couple of details : Name ,Date Established , City Center point, CentralStation
+ * The City class represent a city with couple of details : Name ,Date Established , City Center point, Central Station
+ * location
  * Number Of Residents and Number Of Neighborhoods
  * @author Itay getahun
  * id 315573667
@@ -138,11 +139,7 @@ public class City {
      * set City's neighborhoods count or deafult
      */
     public void setNumOfNeighborhoods(int numOfNeighborhoods) {
-        if (numOfNeighborhoods >= MINIMUM_NEIGHBORHOODS) {
-            this._numOfNeighborhoods = numOfNeighborhoods;
-        } else {
-            this._numOfNeighborhoods = MINIMUM_NEIGHBORHOODS;
-        }
+        this._numOfNeighborhoods = Math.max(numOfNeighborhoods, MINIMUM_NEIGHBORHOODS);
     }
 
     /**
@@ -158,10 +155,9 @@ public class City {
     }
 
     /**
-     * @param other - other city to compare to
+     * @param other  other city to compare to
      * @return boolean true if all fields are equal by value false if not
      */
-
     public boolean equals(City other) {
         return getCityName().equals(other.getCityName()) &&
                 getDateEstablished().equals(other._dateEstablished) &&
@@ -171,6 +167,11 @@ public class City {
                 getNumOfNeighborhoods() == other.getNumOfNeighborhoods();
     }
 
+    /**
+     * Add or subtract residents count if valid
+     * @param residentToUpdate the amount of residents to change
+     * @return if the operation is valid and did happen
+     */
     public boolean addResidents(long residentToUpdate) {
         if (getNumOfResidents() + residentToUpdate >= MINIMUM_RESIDENTS) {
             setNumOfResidents(getNumOfResidents() + residentToUpdate);
@@ -192,7 +193,6 @@ public class City {
 
     /**
      * calculates the distance between the city's center and city's central station
-     *
      * @return the distance between the city's center and city's central station
      */
     public double distanceBetweenCenterAndStation() {
@@ -231,6 +231,11 @@ public class City {
         } else return date2.before(getDateEstablished()) && getDateEstablished().before(date1);
     }
 
+    /**
+     * Calculates the date diffrence between the two cities' established dates
+     * @param other thr other city to compare
+     * @return the diffrence of established dates as int
+     */
     public int establishmentDateDiff(City other){
         return getDateEstablished().difference(other.getDateEstablished());
     }
